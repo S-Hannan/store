@@ -24,6 +24,14 @@ app.get('/', async (req, res) => {
         return res.json({ msg: err })
     }
 })
+app.post('/', async (req, res) => {
+    try {
+        return res.render('index')
+    } catch (err) {
+        console.log(err)
+        return res.json({ msg: err })
+    }
+})
 //View engine
 app.set('view engine', 'ejs')
 app.set('views', './public')
