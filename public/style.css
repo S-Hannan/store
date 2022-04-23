@@ -1,0 +1,283 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.heading {
+    background-color: rgb(225, 212, 212);
+    height: 6vw;
+    padding: 3vw 0 0 15vw;
+    font-size: 2.1vw;
+    font-weight: 900;
+}
+
+.home {
+
+    color: rgb(122, 78, 78);
+}
+
+.container {
+    /* background-color: green; */
+    width: 70vw;
+    min-height: 40vw;
+    display: flex;
+    margin: 4vw auto 0 auto;
+}
+
+.panel {
+    /* background-color: red; */
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+    position: sticky;
+    top: 4vw;
+
+}
+
+.allcontent {
+    width: inherit;
+}
+
+.sort {
+    background-color: white;
+    /* height: 2.5rem; */
+    height: 5.5rem;
+    padding: 0;
+    /* margin-bottom: 3rem; */
+    position: sticky;
+    top: 0;
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+
+.info p {
+    font-size: 1vw;
+    width: 16rem;
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+hr {
+    border: 1.5px solid rgb(211, 236, 251);
+    background-color: rgb(211, 236, 251);
+    width: 31vw;
+    height: fit-content;
+}
+
+.select {
+    display: flex;
+    margin-left: 3rem;
+
+}
+
+.select p {
+    font-size: 1vw;
+    width: 6rem;
+    font-weight: bold;
+
+}
+
+#sort {
+    font-size: 1vw;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+
+}
+
+option {
+    border: none;
+}
+
+.products {
+    /* background-color: blue; */
+    /* min-height: 40rem; */
+    max-width: initial;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 2vw;
+}
+
+#search {
+    background-color: rgb(237, 248, 255);
+    height: 40px;
+    width: 65%;
+    border: none;
+    font-size: 1vw;
+    color: grey;
+    padding-left: 10px;
+
+}
+
+
+.category, .company, .colors, .price {
+    margin-top: 20px;
+}
+
+.category p:first-child {
+    font-weight: bold;
+    font-size: 1.1vw;
+
+}
+
+p~.categories {
+    margin: 10px 0 0 0;
+    color: rgb(104, 104, 104);
+    font-weight: 500;
+
+
+}
+
+p~.categories input[type="submit"] {
+    background-color: white;
+    font-size: 1vw;
+    border: none;
+}
+
+#exception {
+    background-color: white;
+    font-size: 1vw;
+    border: none;
+}
+
+p~.categories input[type="submit"]:hover {
+    font-weight: bold;
+}
+
+p~.categories input[type="submit"]:focus {
+    border-bottom: 2px solid black;
+}
+
+
+
+.company p {
+    font-weight: bold;
+    font-size: 1.1vw;
+
+}
+
+.company select {
+    border: none;
+    background-color: rgb(237, 248, 255);
+    font-size: 1vw;
+    margin-top: 1.2rem;
+    font-weight: 500;
+}
+
+#allcolors {
+    display: flex;
+}
+
+.colors p {
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+
+
+.colors p+div {
+    margin: 10px 0 10px 0;
+    color: rgb(104, 104, 104);
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+#all~.circle {
+    height: 18px;
+    width: 18px;
+    margin: 0 5px;
+    border-radius: 20px;
+}
+
+#red {
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+#green {
+    background-color: rgba(173, 255, 47, 0.6);
+
+}
+
+#blue {
+    background-color: rgba(0, 0, 255, 0.6);
+}
+
+#black {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#yellow {
+    background-color: rgba(255, 255, 0, 0.6);
+}
+
+.price :first-child {
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+
+.range {
+    color: rgb(104, 104, 104);
+    font-size: 1vw;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+
+}
+
+.shipping {
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+input[type="button"] {
+    margin-top: 2rem;
+    font-size: 0.9em;
+    background-color: brown;
+    color: white;
+    border-radius: 6px;
+    padding: 6px;
+    font-weight: bold;
+    border: none;
+}
+
+.product {
+    height: 13vw;
+    width: 18vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img {
+    /* background-color: green; */
+    width: 18rem;
+}
+
+.desc {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1vw;
+
+}
+
+img {
+    height: 10.5vw;
+    width: 18vw;
+    border-radius: 0.3vw;
+}
+
+.itemprice {
+    color: rgb(165, 135, 135);
+}
