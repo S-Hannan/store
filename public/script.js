@@ -23,7 +23,8 @@ const fill = (name, price, img) => {
     return product
 }
 // //Fetching data
-let url = 'https://nodejs-store-api.herokuapp.com/api/v1/products/static'
+// let url = 'https://nodejs-store-api.herokuapp.com/api/v1/products/static'
+let url = 'http://127.0.0.1:5321/api/v1/products/static'
 fetch(url)
     .then(res => res.json())
     .then(json => {
@@ -36,31 +37,55 @@ fetch(url)
         console.log(json.allProduct)
         //search bar logic
         let query;
-        let filteredItems
-        searchBar.addEventListener('keyup', (e) => {
-            query = e.target.value.replace(/\s+/g, '').toLowerCase()
-            filteredItems = json.allProduct.filter((product) => {
-                return product.name.replace(/\s+/g, '').toLowerCase().includes(query) || product.price.replace(/\s+/g, '').includes(query)
-            })
-            products.innerHTML = ''
-            total.innerHTML = `0 Products Found`
+        let filteredItems;
+        let value;
+        let categorizedItems;
 
-            filteredItems.map((item, i) => {
-                products.append(fill(item.name, item.price, item.img))
-                if (i) {
-                    total.innerHTML = `${i + 1} Products Found`
-                }
-                else if (i == 0) {
-                    total.innerHTML = `${i + 1} Products Found`
-                }
-            })
+        searchBar.addEventListener('keyup', (e) => {
+            if (value) {
+                query = e.target.value.replace(/\s+/g, '').toLowerCase()
+                console.log(query)
+                console.log(value)
+                filteredItems = categorizedItems.filter((product) => {
+                    return product.name.replace(/\s+/g, '').toLowerCase().includes(query) || product.price.replace(/\s+/g, '').includes(query)
+                })
+                products.innerHTML = ''
+                total.innerHTML = `0 Products Found`
+                filteredItems.map((item, i) => {
+                    products.append(fill(item.name, item.price, item.img))
+                    if (i) {
+                        total.innerHTML = `${i + 1} Products Found`
+                    }
+                    else if (i == 0) {
+                        total.innerHTML = `${i + 1} Products Found`
+                    }
+                })
+            } else {
+                query = e.target.value.replace(/\s+/g, '').toLowerCase()
+                console.log(query)
+                filteredItems = json.allProduct.filter((product) => {
+                    return product.name.replace(/\s+/g, '').toLowerCase().includes(query) || product.price.replace(/\s+/g, '').includes(query)
+                })
+                products.innerHTML = ''
+                total.innerHTML = `0 Products Found`
+
+                filteredItems.map((item, i) => {
+                    products.append(fill(item.name, item.price, item.img))
+                    if (i) {
+                        total.innerHTML = `${i + 1} Products Found`
+                    }
+                    else if (i == 0) {
+                        total.innerHTML = `${i + 1} Products Found`
+                    }
+                })
+            }
+
         })
         //Category logic
         let category = document.querySelector('.categorybtn')
         let categories = document.querySelectorAll('.categories')
         category.addEventListener('click', (e) => {
-            let value = e.target.value.toLowerCase()
-            let categorizedItems;
+            value = e.target.value.toLowerCase()
             if (value) {
                 categories.forEach((btn) => {
                     return btn.style.borderBottom = 'none'
@@ -68,32 +93,48 @@ fetch(url)
                 console.log(value)
                 e.target.style.borderBottom = '2px solid black'
                 if (value === 'all') {
-                    console.log(value)
-                    categorizedItems = json.allProduct.sort((a, b) => {
-                        return a.img.substring(5, 7) - b.img.substring(5, 7)
-                    })
-                    products.innerHTML = ''
-                    categorizedItems.map((item, i) => {
-                        total.innerHTML = `${i + 1} Products Found`
-                        return products.append(fill(item.name, item.price, item.img))
-
-                    })
+                    if (query) {
+                        products.innerHTML = ''
+                        filteredItems.map((item, i) => {
+                            total.innerHTML = `${i + 1} Products Found`
+                            return products.append(fill(item.name, item.price, item.img))
+                        })
+                    } else {
+                        console.log(value)
+                        categorizedItems = json.allProduct.sort((a, b) => {
+                            return a.img.substring(5, 7) - b.img.substring(5, 7)
+                        })
+                        products.innerHTML = ''
+                        categorizedItems.map((item, i) => {
+                            total.innerHTML = `${i + 1} Products Found`
+                            return products.append(fill(item.name, item.price, item.img))
+                        })
+                    }
                 }
                 else if (value === value) {
-                    console.log(value)
-                    categorizedItems = json.allProduct.filter((item) => {
-                        return item.category == value
-                    })
-                    products.innerHTML = ''
-                    categorizedItems.map((item, i) => {
-                        total.innerHTML = `${i + 1} Products Found`
-                        return products.append(fill(item.name, item.price, item.img))
-                    })
+                    if (query) {
+                        categorizedItems = filteredItems.filter((item) => {
+                            return item.category == value
+                        })
+                        products.innerHTML = ''
+                        categorizedItems.map((item, i) => {
+                            total.innerHTML = `${i + 1} Products Found`
+                            return products.append(fill(item.name, item.price, item.img))
+                        })
+                    } else {
+                        console.log(value)
+                        categorizedItems = json.allProduct.filter((item) => {
+                            return item.category == value
+                        })
+                        products.innerHTML = ''
+                        categorizedItems.map((item, i) => {
+                            total.innerHTML = `${i + 1} Products Found`
+                            return products.append(fill(item.name, item.price, item.img))
+                        })
+                    }
                 }
             }
         })
-
-
         //sorting logic
         let option
         sortPrice.addEventListener('input', (e) => {
