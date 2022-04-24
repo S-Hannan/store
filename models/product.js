@@ -27,6 +27,13 @@ const productSchema = new mongoose.Schema({
             message: '{VALUE} is not supported'
         }
     },
+    category: {
+        type: String,
+        enum: {
+            values: ['office', 'living', 'kitchen', 'bedroom', 'dining', 'kids'],
+            message: '{VALUE} is not supported'
+        }
+    },
     img: {
         type: String
     }

@@ -13,25 +13,9 @@ const app = express()
 const notFoundMiddleware = require('./middleware/not-found')
 const errorMiddleware = require('./middleware/error-handler')
 const connectDB = require('./db/connect')
+const jsonProducts = require('./products.json')
 const routes = require('./routes/products')
 
-//Routes
-app.get('/', async (req, res) => {
-    try {
-        return res.render('index')
-    } catch (err) {
-        console.log(err)
-        return res.json({ msg: err })
-    }
-})
-app.post('/', async (req, res) => {
-    try {
-        return res.render('index')
-    } catch (err) {
-        console.log(err)
-        return res.json({ msg: err })
-    }
-})
 //View engine
 app.set('view engine', 'ejs')
 app.set('views', './public')
@@ -43,6 +27,51 @@ app.use(errorMiddleware)
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static('./public'))
+//Routes
+app.get('/', async (req, res) => {
+    try {
+        return res.render('index')
+    } catch (err) {
+        console.log(err)
+        return res.json({ msg: err })
+    }
+})
+// app.post('/', async (req, res) => {
+//     try {
+//         const { category } = req.body
+//         if (category == 'All') {
+//             return res.render('index')
+//         }
+//         else if (category == "Office") {
+//            let result = jsonProducts.filter((item) => {
+//                 return item.category == 'office'
+//             })
+//             return res.render({})
+//         }
+//         else if (category == "Living") {
+//             return res.json({ category })
+//         }
+//         else if (category == "Kitchen") {
+//             return res.json({ category })
+//         }
+//         else if (category == "Bedroom") {
+//             return res.json({ category })
+//         }
+//         else if (category == "Dining") {
+//             return res.json({ category })
+//         }
+//         else if (category == "Kids") {
+//             return res.json({ category })
+//         }
+//         else {
+//             res.json({ result: 'not matched' })
+//         }
+//     } catch (err) {
+//         console.log(err)
+//         return res.json({ msg: err })
+//     }
+// })
+
 //Start
 const start = async (url) => {
     try {

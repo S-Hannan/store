@@ -23,7 +23,7 @@ const fill = (name, price, img) => {
     return product
 }
 // //Fetching data
-let url = 'https://nodejs-store-api.herokuapp.com/api/v1/products/static'
+let url = 'http://127.0.0.1:5321/api/v1/products/static'
 fetch(url)
     .then(res => res.json())
     .then(json => {
@@ -55,6 +55,45 @@ fetch(url)
                 }
             })
         })
+        //Category logic
+        let category = document.querySelector('.categorybtn')
+        let categories = document.querySelectorAll('.categories')
+        category.addEventListener('click', (e) => {
+            let value = e.target.value.toLowerCase()
+            let categorizedItems;
+            if (value) {
+                categories.forEach((btn) => {
+                    return btn.style.borderBottom = 'none'
+                })
+                console.log(value)
+                e.target.style.borderBottom = '2px solid black'
+                if (value === 'all') {
+                    console.log(value)
+                    categorizedItems = json.allProduct.sort((a, b) => {
+                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                    })
+                    products.innerHTML = ''
+                    categorizedItems.map((item, i) => {
+                        total.innerHTML = `${i + 1} Products Found`
+                        return products.append(fill(item.name, item.price, item.img))
+
+                    })
+                }
+                else if (value === value) {
+                    console.log(value)
+                    categorizedItems = json.allProduct.filter((item) => {
+                        return item.category == value
+                    })
+                    products.innerHTML = ''
+                    categorizedItems.map((item, i) => {
+                        total.innerHTML = `${i + 1} Products Found`
+                        return products.append(fill(item.name, item.price, item.img))
+                    })
+                }
+            }
+        })
+
+
         //sorting logic
         let option
         sortPrice.addEventListener('input', (e) => {
@@ -62,7 +101,6 @@ fetch(url)
             console.log(option)
 
             let sortedItems;
-            // console.log(query)
             if (option == 'lowest') {
                 if (query) {
                     sortedItems = filteredItems.sort((a, b) => {
@@ -159,6 +197,10 @@ fetch(url)
             <option value="highest">Price(Highest)</option>`
             option = 'notsorted'
             console.log(option)
+            categories.forEach((btn) => {
+                return btn.style.borderBottom = 'none'
+            })
+            categories[0].style.borderBottom = '2px solid'
         })
 
     }).catch(err => console.log(err))

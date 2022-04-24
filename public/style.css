@@ -23,7 +23,6 @@ html {
 }
 
 .container {
-    /* background-color: green; */
     width: 70vw;
     min-height: 40vw;
     display: flex;
@@ -31,7 +30,6 @@ html {
 }
 
 .panel {
-    /* background-color: red; */
     height: 40vw;
     display: flex;
     flex-direction: column;
@@ -47,10 +45,8 @@ html {
 
 .sort {
     background-color: white;
-    /* height: 2.5rem; */
     height: 5.5rem;
     padding: 0;
-    /* margin-bottom: 3rem; */
     position: sticky;
     top: 0;
 }
@@ -101,8 +97,6 @@ option {
 }
 
 .products {
-    /* background-color: blue; */
-    /* min-height: 40rem; */
     max-width: initial;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -132,11 +126,15 @@ option {
 
 }
 
-p~.categories {
+.categorybtn .categories {
     margin: 10px 0 0 0;
     color: rgb(104, 104, 104);
     font-weight: 500;
-
+    border: none;
+    display: flex;
+    background-color: white;
+    font-size: 1vw;
+    border: none;
 
 }
 
@@ -146,13 +144,14 @@ p~.categories input[type="submit"] {
     border: none;
 }
 
-#exception {
+.categorybtn :first-child {
     background-color: white;
     font-size: 1vw;
-    border: none;
+    border-bottom: 2px solid black;
+
 }
 
-p~.categories input[type="submit"]:hover {
+.categorybtn .categories:hover {
     font-weight: bold;
 }
 
@@ -240,7 +239,7 @@ p~.categories input[type="submit"]:focus {
     font-size: 1vw;
 }
 
-input[type="button"] {
+#clear {
     margin-top: 2rem;
     font-size: 0.9em;
     background-color: brown;
@@ -260,12 +259,10 @@ input[type="button"] {
 }
 
 .img {
-    /* background-color: green; */
     width: 18rem;
 }
 
 .desc {
-    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
     font-size: 1.1vw;

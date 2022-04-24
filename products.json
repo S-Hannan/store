@@ -1,0 +1,160 @@
+[
+  {
+    "name": "silky sofa",
+    "price": 25,
+    "company": "marcos",
+    "rating": 4,
+    "img": "/img/1.jpg",
+    "category": "living"
+  },
+  {
+    "name": "cotton bed",
+    "price": 109,
+    "company": "liddy",
+    "rating": 5,
+    "img": "/img/2.jpg",
+    "category": "bedroom"
+  },
+  {
+    "name": "decent bed",
+    "price": 309,
+    "company": "liddy",
+    "rating": 4.9,
+    "img": "/img/3.jpg",
+    "category": "bedroom"
+  },
+  {
+    "name": "comfochair",
+    "price": 125,
+    "company": "marcos",
+    "rating": 4.8,
+    "img": "/img/4.webp",
+    "category": "living"
+  },
+  {
+    "name": "entertainment room",
+    "price": 40,
+    "company": "liddy",
+    "rating": 4.6,
+    "img": "/img/5.webp",
+    "category": "kids"
+  },
+  {
+    "name": "modern bed",
+    "price": 42,
+    "company": "ikea",
+    "rating": 4.55,
+    "img": "/img/6.jpg",
+    "category": "bedroom"
+  },
+  {
+    "name": "emperor bed",
+    "price": 23,
+    "company": "ikea",
+    "img": "/img/7.jpg",
+    "category": "bedroom"
+  },
+  {
+    "name": "shelf wall",
+    "price": 59,
+    "featured": true,
+    "company": "caressa",
+    "img": "/img/8.jpg",
+    "category": "office"
+  },
+  {
+    "name": "modern bookshelf",
+    "price": 39,
+    "featured": true,
+    "company": "ikea",
+    "img": "/img/9.jpg",
+    "category": "office"
+  },
+  {
+    "name": "kitchen-stool set",
+    "price": 99,
+    "company": "caressa",
+    "img": "/img/10.jpg",
+    "category": "kitchen"
+  },
+  {
+    "name": "luxury sofa",
+    "price": 31,
+    "featured": true,
+    "company": "caressa",
+    "img": "/img/11.jpg",
+    "category": "living"
+  },
+  {
+    "name": "modern poster",
+    "price": 30,
+    "company": "liddy",
+    "img": "/img/12.jpg",
+    "category": "kitchen"
+  },
+  {
+    "name": "marble-drawer-kitchen",
+    "price": 30,
+    "company": "ikea",
+    "img": "/img/13.jpg",
+    "category": "kitchen"
+  },
+  {
+    "name": "decent chair",
+    "price": 109,
+    "company": "liddy",
+    "img": "/img/14.jpg",
+    "category": "living"
+  },
+  {
+    "name": "dining table",
+    "price": 129,
+    "company": "marcos",
+    "img": "/img/15.jpg",
+    "category": "dining"
+  },
+  {
+    "name": "suede armchair",
+    "price": 15,
+    "company": "caressa",
+    "img": "/img/16.jpg",
+    "category": "living"
+  },
+  {
+    "name": "high-back bench",
+    "price": 79,
+    "featured": true,
+    "company": "liddy",
+    "img": "/img/17.jpg",
+    "category": "office"
+  },
+  {
+    "name": "albany sectional",
+    "price": 120,
+    "featured": true,
+    "company": "marcos",
+    "img": "/img/18.jpg",
+    "category": "living"
+  },
+  {
+    "name": "albany table",
+    "price": 25,
+    "company": "ikea",
+    "img": "/img/19.jpg",
+    "category": "dining"
+  },
+  {
+    "name": "leather sofa",
+    "price": 15,
+    "company": "ikea",
+    "img": "/img/20.jpg",
+    "category": "living"
+  },
+  {
+    "name": "utopia sofa",
+    "price": 40,
+    "company": "ikea",
+    "img": "/img/21.jpg",
+    "category": "living"
+  }
+]
