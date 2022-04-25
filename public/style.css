@@ -22,11 +22,18 @@ html {
     color: rgb(122, 78, 78);
 }
 
+.stick {
+    height: 2vw;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
 .container {
     width: 70vw;
     min-height: 40vw;
     display: flex;
-    margin: 4vw auto 0 auto;
+    margin: 0 auto 0 auto;
 }
 
 .panel {
@@ -35,7 +42,8 @@ html {
     flex-direction: column;
     width: 14vw;
     position: sticky;
-    top: 4vw;
+    top: 2vw;
+    padding-top: 1.5vw;
 
 }
 
@@ -48,7 +56,8 @@ html {
     height: 5.5rem;
     padding: 0;
     position: sticky;
-    top: 0;
+    top: 2vw;
+    display: flex;
 }
 
 .sorting {
