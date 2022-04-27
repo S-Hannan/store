@@ -27,7 +27,7 @@ const fill = (name, price, img) => {
     return product
 }
 // //Fetching data
-// let url = 'https://nodejs-store-api.herokuapp.com/static'
+let url = 'https://nodejs-store-api.herokuapp.com/static'
 // let url = 'http://127.0.0.1:5321/static'
 fetch(url)
     .then(res => res.json())
