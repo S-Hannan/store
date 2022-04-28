@@ -1,5 +1,4 @@
 'usestrict'
-
 let products = document.querySelector('.products')
 let searchBar = document.getElementById('search')
 let company = document.getElementById('company')
@@ -10,6 +9,32 @@ let category = document.querySelector('.categorybtn')
 let categories = document.querySelectorAll('.categories')
 let click = document.querySelectorAll('#sort option')[0]
 let shipping = document.getElementById('shipping')
+let allcolors = document.getElementById('allcolors')
+allcolors.addEventListener('click', (e) => {
+    let element = e.target.id
+    if (element == 'allcolors') {
+        return
+    }
+    else if (element == 'all') {
+        for (let i = 1; i < 6; i++) {
+            allcolors.children[i].style.height = '18px'
+            allcolors.children[i].style.width = '18px'
+            allcolors.children[i].style.border = 'none'
+        }
+        return e.target.style.borderBottom = '2px solid black'
+    } else {
+        for (let i = 1; i < 6; i++) {
+            allcolors.children[i].style.height = '18px'
+            allcolors.children[i].style.width = '18px'
+            console.log('done')
+            allcolors.children[i].style.border = 'none'
+        }
+        allcolors.children[0].style.border = 'none'
+        e.target.style.height = '15px'
+        e.target.style.width = '15px'
+        return e.target.style.border = '2px solid black'
+    }
+})
 /////////////////////////////////////////////////////////
 
 
@@ -27,8 +52,8 @@ const fill = (name, price, img) => {
     return product
 }
 // //Fetching data
-let url = 'https://nodejs-store-api.herokuapp.com/static'
-// let url = 'http://127.0.0.1:5321/static'
+// let url = 'https://nodejs-store-api.herokuapp.com/static'
+let url = 'http://127.0.0.1:5321/static'
 fetch(url)
     .then(res => res.json())
     .then(json => {

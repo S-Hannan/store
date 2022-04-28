@@ -10,10 +10,12 @@ html {
 }
 
 .heading {
+    display: flex;
     background-color: rgb(225, 212, 212);
     height: 6vw;
-    padding: 3vw 0 0 15vw;
-    font-size: 2.1vw;
+    align-items: center;
+    padding-left: 3vw;
+    font-size: 2.5rem;
     font-weight: 900;
 }
 
@@ -29,8 +31,25 @@ html {
     background-color: white;
 }
 
+.burger {
+    display: none;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.line {
+    text-decoration: none;
+    background-color: black;
+    height: 2.5px;
+    width: 25px;
+    margin: 3px 3px;
+    z-index: 1;
+}
+
 .container {
-    width: 70vw;
+    width: 77vw;
     min-height: 40vw;
     display: flex;
     margin: 0 auto 0 auto;
@@ -66,10 +85,14 @@ html {
     height: inherit;
 }
 
+.info {
+    margin-right: 1.5vw;
+
+}
+
 .info p {
-    font-size: 1vw;
-    width: 16rem;
-    margin-right: 2rem;
+    font-size: 1.4rem;
+    width: 13vw;
     font-weight: bold;
 }
 
@@ -82,19 +105,18 @@ hr {
 
 .select {
     display: flex;
-    margin-left: 3rem;
-
+    margin-left: 2.5vw;
 }
 
 .select p {
-    font-size: 1vw;
-    width: 6rem;
+    font-size: 1.4rem;
+    width: 5vw;
     font-weight: bold;
 
 }
 
 #sort {
-    font-size: 1vw;
+    font-size: 1.4rem;
     border: none;
     background-color: transparent;
     font-weight: bold;
@@ -118,7 +140,7 @@ option {
     height: 40px;
     width: 65%;
     border: none;
-    font-size: 1vw;
+    font-size: 1.4rem;
     color: grey;
     padding-left: 10px;
 
@@ -131,7 +153,7 @@ option {
 
 .category p:first-child {
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 1.5rem;
 
 }
 
@@ -142,20 +164,20 @@ option {
     border: none;
     display: flex;
     background-color: white;
-    font-size: 1vw;
+    font-size: 1.4rem;
     border: none;
 
 }
 
 p~.categories input[type="submit"] {
     background-color: white;
-    font-size: 1vw;
+    font-size: 1.4rem;
     border: none;
 }
 
 .categorybtn :first-child {
     background-color: white;
-    font-size: 1vw;
+    font-size: 1.4rem;
     border-bottom: 2px solid black;
 
 }
@@ -172,39 +194,46 @@ p~.categories input[type="submit"]:focus {
 
 .company p {
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 1.5rem;
 
 }
 
 .company select {
     border: none;
     background-color: rgb(237, 248, 255);
-    font-size: 1vw;
+    font-size: 1.4rem;
     margin-top: 1.2rem;
     font-weight: 500;
 }
 
 #allcolors {
     display: flex;
+    height: 1.5vw;
+    width: 11vw;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .colors p {
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 1.5rem;
 }
 
 
 .colors p+div {
     margin: 10px 0 10px 0;
     color: rgb(104, 104, 104);
-    font-size: 1vw;
+    font-size: 1.4rem;
     font-weight: 500;
+}
+
+#all {
+    border-bottom: 2px solid black;
 }
 
 #all~.circle {
     height: 18px;
     width: 18px;
-    margin: 0 5px;
     border-radius: 20px;
 }
 
@@ -231,12 +260,12 @@ p~.categories input[type="submit"]:focus {
 
 .price :first-child {
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 1.5rem;
 }
 
 .range {
     color: rgb(104, 104, 104);
-    font-size: 1vw;
+    font-size: 1.4rem;
     font-weight: bold;
     margin: 10px 0 10px 0;
 
@@ -245,12 +274,12 @@ p~.categories input[type="submit"]:focus {
 .shipping {
     margin-top: 2rem;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 1.4rem;
 }
 
 #clear {
     margin-top: 2rem;
-    font-size: 0.9em;
+    font-size: 1.2rem;
     background-color: brown;
     color: white;
     border-radius: 6px;
@@ -274,7 +303,7 @@ p~.categories input[type="submit"]:focus {
 .desc {
     display: flex;
     justify-content: space-between;
-    font-size: 1.1vw;
+    font-size: 1.4rem;
 
 }
 
