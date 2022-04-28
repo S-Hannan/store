@@ -1,7 +1,7 @@
 @media (max-width:494px) {
     html {
         /* overflow: visible; */
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .heading {
@@ -10,67 +10,7 @@
     }
 
     .stick {
-        background-color: red;
-    }
-
-    .container {
-        margin: 0;
-    }
-
-    .allcontent {
-        width: 100vw;
-    }
-
-    /* .burger {
-        display: block;
-        position: fixed;
-        top: 13px;
-    } */
-    .panel {
-        display: none;
-    }
-
-    .info {
-        margin-right: 0;
-    }
-
-    .info p {
-        width: 14rem;
-    }
-
-    hr {
-        width: 10rem;
-    }
-
-    .select {
-        margin-left: 1rem;
-    }
-
-    .select p {
-        width: 6rem;
-    }
-
-    img {
-        height: 28.5vw;
-        width: 45vw;
-    }
-
-
-}
-
-@media (max-width:450px) {
-    html {
-        /* overflow: visible; */
-        font-size: 8px;
-    }
-
-    .heading {
-        height: 15vw;
-        width: 100vw;
-    }
-
-    .stick {
-        background-color: red;
+        /* background-color: red; */
     }
 
     .container {
@@ -79,7 +19,7 @@
     }
 
     .allcontent {
-        width: 90vw;
+        width: 94vw;
     }
 
     .sort {
@@ -129,6 +69,97 @@
         grid-template-columns: repeat(2, 1fr);
         row-gap: 2rem;
         column-gap: 2rem;
+        width: fit-content;
+    }
+
+    .product {
+        width: 45vw;
+        height: fit-content;
+    }
+
+    img {
+        height: 28.5vw;
+        width: 45vw;
+    }
+
+    .desc {
+        font-weight: bold;
+    }
+
+}
+
+@media (max-width:450px) {
+    html {
+        /* overflow: visible; */
+        font-size: 8px;
+    }
+
+    .heading {
+        height: 15vw;
+        width: 100vw;
+    }
+
+    .stick {
+        /* background-color: red; */
+    }
+
+    .container {
+        margin: auto;
+        width: fit-content;
+    }
+
+    .allcontent {
+        width: 94vw;
+    }
+
+    .sort {
+        width: 100vw;
+        margin: auto;
+    }
+
+    .sorting {
+        width: 100vw;
+        justify-content: center;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 13px;
+        left: 0;
+        z-index: 1;
+        width: fit-content;
+    }
+
+    .panel {
+        display: none;
+    }
+
+    .info {
+        margin-right: 0;
+    }
+
+    .info p {
+        width: 10rem;
+    }
+
+    hr {
+        width: 8rem;
+    }
+
+    .select {
+        margin-left: 1rem;
+    }
+
+    .select p {
+        width: 6rem;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+        column-gap: 2rem;
+        width: fit-content;
     }
 
     .product {
