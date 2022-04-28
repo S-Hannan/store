@@ -10,6 +10,8 @@ let categories = document.querySelectorAll('.categories')
 let click = document.querySelectorAll('#sort option')[0]
 let shipping = document.getElementById('shipping')
 let allcolors = document.getElementById('allcolors')
+
+//Color buttons
 allcolors.addEventListener('click', (e) => {
     let element = e.target.id
     if (element == 'allcolors') {
@@ -52,8 +54,8 @@ const fill = (name, price, img) => {
     return product
 }
 // //Fetching data
-let url = 'https://nodejs-store-api.herokuapp.com/static'
-// let url = 'http://127.0.0.1:5321/static'
+// let url = 'https://nodejs-store-api.herokuapp.com/static'
+let url = 'http://127.0.0.1:5321/static'
 fetch(url)
     .then(res => res.json())
     .then(json => {
@@ -61,7 +63,7 @@ fetch(url)
         //Displaying data
         json.allProduct.map((item, i) => {
             products.append(fill(item.name, item.price, item.img))
-            total.innerHTML = `${i + 1} Products Found`
+            total.innerHTML = `${i + 1} Products`
         })
         //dynamic variables
         let query;
@@ -85,14 +87,14 @@ fetch(url)
                                 return product.name.replace(/\s+/g, '').toLowerCase().includes(query)
                             })
                             products.innerHTML = ''
-                            total.innerHTML = `0 Products Found`
+                            total.innerHTML = `0 Products`
                             filteredItems.map((item, i) => {
                                 products.append(fill(item.name, item.price, item.img))
                                 if (i) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                                 else if (i == 0) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                             })
                         } else {
@@ -101,14 +103,14 @@ fetch(url)
                                 return product.name.replace(/\s+/g, '').toLowerCase().includes(query) && product.category == value
                             })
                             products.innerHTML = ''
-                            total.innerHTML = `0 Products Found`
+                            total.innerHTML = `0 Products`
                             filteredItems.map((item, i) => {
                                 products.append(fill(item.name, item.price, item.img))
                                 if (i) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                                 else if (i == 0) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                             })
                         }
@@ -119,15 +121,15 @@ fetch(url)
                             return product.name.replace(/\s+/g, '').toLowerCase().includes(query)
                         })
                         products.innerHTML = ''
-                        total.innerHTML = `0 Products Found`
+                        total.innerHTML = `0 Products`
 
                         filteredItems.map((item, i) => {
                             products.append(fill(item.name, item.price, item.img))
                             if (i) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                             else if (i == 0) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                         })
                     }
@@ -144,14 +146,14 @@ fetch(url)
                             console.log('two')
 
                             products.innerHTML = ''
-                            total.innerHTML = `0 Products Found`
+                            total.innerHTML = `0 Products`
                             filteredItems.map((item, i) => {
                                 products.append(fill(item.name, item.price, item.img))
                                 if (i) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                                 else if (i == 0) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                             })
                         } else {
@@ -160,14 +162,14 @@ fetch(url)
                                 return product.name.replace(/\s+/g, '').toLowerCase().includes(query) && product.category == value && product.company == name
                             })
                             products.innerHTML = ''
-                            total.innerHTML = `0 Products Found`
+                            total.innerHTML = `0 Products`
                             filteredItems.map((item, i) => {
                                 products.append(fill(item.name, item.price, item.img))
                                 if (i) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                                 else if (i == 0) {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                 }
                             })
                         }
@@ -178,15 +180,15 @@ fetch(url)
                             return product.name.replace(/\s+/g, '').toLowerCase().includes(query) && product.company == name
                         })
                         products.innerHTML = ''
-                        total.innerHTML = `0 Products Found`
+                        total.innerHTML = `0 Products`
 
                         filteredItems.map((item, i) => {
                             products.append(fill(item.name, item.price, item.img))
                             if (i) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                             else if (i == 0) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                         })
                     }
@@ -200,14 +202,14 @@ fetch(url)
                             return product.name.replace(/\s+/g, '').toLowerCase().includes(query)
                         })
                         products.innerHTML = ''
-                        total.innerHTML = `0 Products Found`
+                        total.innerHTML = `0 Products`
                         filteredItems.map((item, i) => {
                             products.append(fill(item.name, item.price, item.img))
                             if (i) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                             else if (i == 0) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                         })
                     } else {
@@ -218,14 +220,14 @@ fetch(url)
                             return product.name.replace(/\s+/g, '').toLowerCase().includes(query) && product.category == value
                         })
                         products.innerHTML = ''
-                        total.innerHTML = `0 Products Found`
+                        total.innerHTML = `0 Products`
                         filteredItems.map((item, i) => {
                             products.append(fill(item.name, item.price, item.img))
                             if (i) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                             else if (i == 0) {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                             }
                         })
                     }
@@ -236,15 +238,15 @@ fetch(url)
                         return product.name.replace(/\s+/g, '').toLowerCase().includes(query)
                     })
                     products.innerHTML = ''
-                    total.innerHTML = `0 Products Found`
+                    total.innerHTML = `0 Products`
 
                     filteredItems.map((item, i) => {
                         products.append(fill(item.name, item.price, item.img))
                         if (i) {
-                            total.innerHTML = `${i + 1} Products Found`
+                            total.innerHTML = `${i + 1} Products`
                         }
                         else if (i == 0) {
-                            total.innerHTML = `${i + 1} Products Found`
+                            total.innerHTML = `${i + 1} Products`
                         }
                     })
                 }
@@ -275,7 +277,7 @@ fetch(url)
                                             return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                         })
                                         filteredItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     } else {
@@ -284,7 +286,7 @@ fetch(url)
                                         })
                                         products.innerHTML = ''
                                         categorizedItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     }
@@ -299,7 +301,7 @@ fetch(url)
                                             return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                         })
                                         filteredItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     } else {
@@ -308,7 +310,7 @@ fetch(url)
                                         })
                                         products.innerHTML = ''
                                         categorizedItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     }
@@ -324,7 +326,7 @@ fetch(url)
                                         })
 
                                         filteredItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     } else {
@@ -333,7 +335,7 @@ fetch(url)
                                         })
                                         products.innerHTML = ''
                                         categorizedItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     }
@@ -349,7 +351,7 @@ fetch(url)
                                     })
 
                                     filteredItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -359,7 +361,7 @@ fetch(url)
                                     console.log('mil gaya 9')
                                     products.innerHTML = ''
                                     categorizedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -372,10 +374,10 @@ fetch(url)
                                     return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
                                 })
 
-                                total.innerHTML = `0 Products Found`
+                                total.innerHTML = `0 Products`
                                 products.innerHTML = ''
                                 categorizedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
 
@@ -387,7 +389,7 @@ fetch(url)
 
                                 products.innerHTML = ''
                                 categorizedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -413,7 +415,7 @@ fetch(url)
                                             return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.company == name
                                         })
                                         filteredItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     } else {
@@ -425,7 +427,7 @@ fetch(url)
                                         })
                                         products.innerHTML = ''
                                         categorizedItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     }
@@ -440,7 +442,7 @@ fetch(url)
                                             return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.company == name
                                         })
                                         filteredItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     } else {
@@ -452,7 +454,7 @@ fetch(url)
                                         })
                                         products.innerHTML = ''
                                         categorizedItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     }
@@ -467,7 +469,7 @@ fetch(url)
                                             return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.company == name
                                         })
                                         filteredItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     } else {
@@ -480,7 +482,7 @@ fetch(url)
 
                                         products.innerHTML = ''
                                         categorizedItems.map((item, i) => {
-                                            total.innerHTML = `${i + 1} Products Found`
+                                            total.innerHTML = `${i + 1} Products`
                                             return products.append(fill(item.name, item.price, item.img))
                                         })
                                     }
@@ -496,7 +498,7 @@ fetch(url)
                                     })
 
                                     filteredItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -508,7 +510,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     categorizedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -519,10 +521,10 @@ fetch(url)
                                 categorizedItems = json.allProduct.filter((item) => {
                                     return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value && item.company == name
                                 })
-                                total.innerHTML = `0 Products Found`
+                                total.innerHTML = `0 Products`
                                 products.innerHTML = ''
                                 categorizedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
 
@@ -532,7 +534,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 categorizedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -558,7 +560,7 @@ fetch(url)
                                         return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     filteredItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -568,7 +570,7 @@ fetch(url)
                                     console.log('7')
                                     products.innerHTML = ''
                                     categorizedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -583,7 +585,7 @@ fetch(url)
                                         return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     filteredItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -593,7 +595,7 @@ fetch(url)
                                     console.log('mil gaya 6')
                                     products.innerHTML = ''
                                     categorizedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -608,7 +610,7 @@ fetch(url)
                                         return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     filteredItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -618,7 +620,7 @@ fetch(url)
                                     console.log('mil gaya 5')
                                     products.innerHTML = ''
                                     categorizedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -633,7 +635,7 @@ fetch(url)
                                     return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                 })
                                 filteredItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -643,7 +645,7 @@ fetch(url)
                                 console.log('mil gaya 4')
                                 products.innerHTML = ''
                                 categorizedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -655,10 +657,10 @@ fetch(url)
 
                                 return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
                             })
-                            total.innerHTML = `0 Products Found`
+                            total.innerHTML = `0 Products`
                             products.innerHTML = ''
                             categorizedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
 
@@ -668,7 +670,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             categorizedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
                         }
@@ -691,7 +693,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -701,7 +703,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -715,7 +717,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -727,7 +729,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -740,7 +742,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -750,7 +752,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -766,7 +768,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -775,7 +777,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
 
                                     })
@@ -790,7 +792,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -802,7 +804,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -814,7 +816,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -823,7 +825,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
 
                                 })
@@ -841,7 +843,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -851,7 +853,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -865,7 +867,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -877,7 +879,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -889,7 +891,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -899,7 +901,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -921,7 +923,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -934,7 +936,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -948,7 +950,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -960,7 +962,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -976,7 +978,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -989,7 +991,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1008,7 +1010,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1020,7 +1022,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
 
                                     })
@@ -1035,7 +1037,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1047,7 +1049,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1062,7 +1064,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1074,7 +1076,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
 
                                 })
@@ -1094,7 +1096,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1106,7 +1108,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1120,7 +1122,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1132,7 +1134,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     sortedItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1147,7 +1149,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1159,7 +1161,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1179,7 +1181,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1189,7 +1191,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1203,7 +1205,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1215,7 +1217,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1228,7 +1230,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             sortedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
                         } else {
@@ -1238,7 +1240,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             sortedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
                         }
@@ -1254,7 +1256,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1263,7 +1265,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
 
                                 })
@@ -1278,7 +1280,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1290,7 +1292,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1302,7 +1304,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             sortedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
                         } else {
@@ -1311,7 +1313,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             sortedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
 
                             })
@@ -1329,7 +1331,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1339,7 +1341,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1353,7 +1355,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             } else {
@@ -1365,7 +1367,7 @@ fetch(url)
                                 })
                                 products.innerHTML = ''
                                 sortedItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1377,7 +1379,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             sortedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
                         } else {
@@ -1387,7 +1389,7 @@ fetch(url)
                             })
                             products.innerHTML = ''
                             sortedItems.map((item, i) => {
-                                total.innerHTML = `${i + 1} Products Found`
+                                total.innerHTML = `${i + 1} Products`
                                 return products.append(fill(item.name, item.price, item.img))
                             })
                         }
@@ -1428,7 +1430,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1436,9 +1438,9 @@ fetch(url)
                                         return item.company == name && item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1448,9 +1450,9 @@ fetch(url)
                                         return item.category == value && item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1458,9 +1460,9 @@ fetch(url)
                                         return item.category == value && item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.company == name
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1471,7 +1473,7 @@ fetch(url)
 
                                     products.innerHTML = ''
                                     json.allProduct.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1479,9 +1481,9 @@ fetch(url)
                                         return item.company == name
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1491,9 +1493,9 @@ fetch(url)
                                         return item.category == value
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1501,9 +1503,9 @@ fetch(url)
                                         return item.category == value && item.company == name
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1518,7 +1520,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1526,9 +1528,9 @@ fetch(url)
                                         return item.company == name && item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1538,9 +1540,9 @@ fetch(url)
                                         return item.category == value && item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1548,9 +1550,9 @@ fetch(url)
                                         return item.category == value && item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.company == name
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1561,7 +1563,7 @@ fetch(url)
 
                                     products.innerHTML = ''
                                     json.allProduct.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1569,9 +1571,9 @@ fetch(url)
                                         return item.company == name
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1581,9 +1583,9 @@ fetch(url)
                                         return item.category == value
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1591,9 +1593,9 @@ fetch(url)
                                         return item.category == value && item.company == name
                                     })
                                     products.innerHTML = ''
-                                    total.innerHTML = `0 Products Found`
+                                    total.innerHTML = `0 Products`
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1614,7 +1616,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1626,7 +1628,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1640,7 +1642,7 @@ fetch(url)
                                         return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                     })
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1653,7 +1655,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1667,7 +1669,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1681,7 +1683,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1696,7 +1698,7 @@ fetch(url)
                                     //     return b.price - a.price
                                     // })
                                     companyItems = json.allProduct.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1708,7 +1710,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1719,7 +1721,7 @@ fetch(url)
                                     //     return b.price - a.price
                                     // })
                                     companyItems = json.allProduct.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1731,7 +1733,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1742,7 +1744,7 @@ fetch(url)
                                     //     return a.price - b.price
                                     // })
                                     companyItems = json.allProduct.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 } else {
@@ -1754,7 +1756,7 @@ fetch(url)
                                     })
                                     products.innerHTML = ''
                                     companyItems.map((item, i) => {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                         return products.append(fill(item.name, item.price, item.img))
                                     })
                                 }
@@ -1770,14 +1772,14 @@ fetch(url)
                                     return item.name.replace(/\s+/g, '').toLowerCase().includes(query)
                                 })
                                 products.innerHTML = ''
-                                total.innerHTML = `0 Products Found`
+                                total.innerHTML = `0 Products`
                                 companyItems.map((item, i) => {
                                     products.append(fill(item.name, item.price, item.img))
                                     if (i) {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                     }
                                     else if (i == 0) {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                     }
                                 })
                             } else {
@@ -1785,14 +1787,14 @@ fetch(url)
                                     return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.company == name
                                 })
                                 products.innerHTML = ''
-                                total.innerHTML = `0 Products Found`
+                                total.innerHTML = `0 Products`
                                 companyItems.map((item, i) => {
                                     products.append(fill(item.name, item.price, item.img))
                                     if (i) {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                     }
                                     else if (i == 0) {
-                                        total.innerHTML = `${i + 1} Products Found`
+                                        total.innerHTML = `${i + 1} Products`
                                     }
                                 })
                             }
@@ -1800,7 +1802,7 @@ fetch(url)
                         } else {
                             if (name == 'all') {
                                 companyItems = json.allProduct.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
 
@@ -1811,7 +1813,7 @@ fetch(url)
                                 total.innerHTML = ` 0 Products Found`
                                 products.innerHTML = ''
                                 companyItems.map((item, i) => {
-                                    total.innerHTML = `${i + 1} Products Found`
+                                    total.innerHTML = `${i + 1} Products`
                                     return products.append(fill(item.name, item.price, item.img))
                                 })
                             }
@@ -1844,7 +1846,7 @@ fetch(url)
             })
             products.innerHTML = ''
             endResult.map((item, i) => {
-                total.innerHTML = `${i + 1} Products Found`
+                total.innerHTML = `${i + 1} Products`
                 return products.append(fill(item.name, item.price, item.img))
             })
             if (shipping.checked) {
