@@ -33,19 +33,17 @@ html {
 
 .burger {
     display: none;
-    position: absolute;
-    top: 4%;
-    right: 2%;
     cursor: pointer;
+
 }
 
 .line {
     text-decoration: none;
     background-color: black;
-    height: 2.5px;
-    width: 25px;
-    margin: 3px 3px;
-    z-index: 1;
+    height: 1vw;
+    width: 7.5vw;
+    /* margin: 1.2vw 1vw; */
+    margin-bottom: 1.7vw;
 }
 
 .container {
@@ -63,7 +61,6 @@ html {
     position: sticky;
     top: 2vw;
     padding-top: 1.5vw;
-
 }
 
 .allcontent {
@@ -315,4 +312,8 @@ img {
 
 .itemprice {
     color: rgb(165, 135, 135);
+}
+
+.filter {
+    display: none;
 }
