@@ -15,7 +15,7 @@ html {
     height: 6vw;
     align-items: center;
     padding-left: 3vw;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 900;
 }
 
@@ -34,16 +34,18 @@ html {
 .burger {
     display: none;
     cursor: pointer;
+    height: 8vw;
+    width: 8vw;
+    position: absolute;
+    top: 0.5vw;
+    left: 2vw;
 
 }
 
 .line {
-    text-decoration: none;
     background-color: black;
-    height: 1vw;
-    width: 7.5vw;
-    /* margin: 1.2vw 1vw; */
-    margin-bottom: 1.7vw;
+    height: 1.2vw;
+    width: 8.5vw;
 }
 
 .container {
@@ -54,7 +56,7 @@ html {
 }
 
 .panel {
-    height: 40vw;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     width: 14vw;
@@ -137,7 +139,7 @@ option {
     height: 40px;
     width: 65%;
     border: none;
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: grey;
     padding-left: 10px;
 
@@ -316,4 +318,16 @@ img {
 
 .filter {
     display: none;
+    height: 5.5vw;
+    width: 13vw;
+    text-align: center;
+    padding-top: 2.3vw;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(122, 78, 78);
+    position: absolute;
+    top: 0;
+    right: 1vw;
+    border: 0.5vw solid black;
+    border-radius: 1vw;
 }
