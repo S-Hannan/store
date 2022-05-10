@@ -6,59 +6,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        .main {
-            display: grid;
-            /* min-height: 20vw; */
-            /* height: 20vw; */
-            width: 20vw;
-            background-color: blue;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .part {
-            border: 3px solid red;
-
-        }
-
-        .burger {
-            height: 200px;
-            width: 300px;
-            background-color: red;
-            display: flex;
+        .burger_panel {
+            display: none;
+            overflow: hidden;
+            background-color: rgb(225, 212, 212);
+            height: 81rem;
             flex-direction: column;
-            /* align-items: center; */
-            justify-content: space-between;
-        }
 
+            border-top-right-radius: 2vw;
+            border-bottom-right-radius: 2vw;
 
-        .line {
-            height: 10px;
-            width: 50px;
-            background-color: black;
+            background-color: red;
         }
     </style>
 </head>
 
 <body>
-    <!-- <div class="main">
-        <div class="part">One</div>
-        <div class="part">Two</div>
-        <div class="part">Three</div>
-        <div class="part">SpanOne</div>
-        <div class="part">SpanTwo</div>
-        <div class="part">SpanTwo</div>
-        <div class="part">SpanTwo</div>
-        <div class="part">SpanTwo</div>
-        <div class="part">SpanTwo</div>
-        <div class="part">SpanTwo</div>
-    </div> -->
-    <div class="burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <div class="category">
+        <p>Category</p>
+        <div class="categorybtn">
+            <input type="button" value="All" class="categories" id="all">
+            <input type="button" value="Office" class="categories" id="office">
+            <input type="button" value="Living" class="categories" id="living">
+            <input type="button" value="Kitchen" class="categories" id="kitchen">
+            <input type="button" value="Bedroom" class="categories" id="bedroom">
+            <input type="button" value="Dining" class="categories" id="dining">
+            <input type="button" value="Kids" class="categories" id="kids">
+        </div>
     </div>
 
+    <div class="company">
+        <p>Company</p>
+        <select name="Company" id="company">
+            <option value="all">All</option>
+            <option value="ikea">Ikea</option>
+            <option value="marcos">Marcos</option>
+            <option value="liddy">Liddy</option>
+            <option value="caressa">Caressa</option>
+        </select>
+    </div>
+    <div class="colors">
+        <p>Colors</p>
+        <div id="allcolors">
+            <div class="circle" id="all">All</div>
+            <div class="circle" id="red"></div>
+            <div class="circle" id="green"></div>
+            <div class="circle" id="blue"></div>
+            <div class="circle" id="black"></div>
+            <div class="circle" id="yellow"></div>
+        </div>
+
+    </div>
+    <div class="price">
+        <p>Price</p>
+        <p class="range">26,000rs</p>
+        <input type="range" name="" id="">
+    </div>
+    <div class="shipping">
+        <label class="ship">
+            Free Shipping
+            <input type="checkbox" name="shipping" id="shipping" value="shipping"><br>
+        </label>
+        <input type="button" id="clear" value="Clear Filters">
+    </div>
 </body>
+<script defer>
+
+</script>
 
 </html>

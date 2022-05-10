@@ -10,6 +10,81 @@ let categories = document.querySelectorAll('.categories')
 let click = document.querySelectorAll('#sort option')[0]
 let shipping = document.getElementById('shipping')
 let allcolors = document.getElementById('allcolors')
+let burger = document.querySelector('.burger')
+let panelDivs = document.querySelector("input[type='search']~div")
+let templateDiv = document.getElementById('template')
+let burger_panel;
+let cat_com_col_pri = document.querySelector('.category, .company, .colors, .price')
+// Burger logic
+burger_panel = document.createElement('div')
+burger_panel.classList.add('burger_panel')
+burger_panel.innerHTML = `
+        
+                
+<div class="category">
+    <p>Category</p>
+    <div class="categorybtn">
+        <input type="button" value="All" class="categories" id="all">
+        <input type="button" value="Office" class="categories" id="office">
+        <input type="button" value="Living" class="categories" id="living">
+        <input type="button" value="Kitchen" class="categories" id="kitchen">
+        <input type="button" value="Bedroom" class="categories" id="bedroom">
+        <input type="button" value="Dining" class="categories" id="dining">
+        <input type="button" value="Kids" class="categories" id="kids">
+    </div>
+</div>
+
+<div class="company">
+    <p>Company</p>
+    <select name="Company" id="company">
+        <option value="all">All</option>
+        <option value="ikea">Ikea</option>
+        <option value="marcos">Marcos</option>
+        <option value="liddy">Liddy</option>
+        <option value="caressa">Caressa</option>
+    </select>
+</div>
+<div class="colors">
+    <p>Colors</p>
+    <div id="allcolors">
+        <div class="circle" id="all">All</div>
+        <div class="circle" id="red"></div>
+        <div class="circle" id="green"></div>
+        <div class="circle" id="blue"></div>
+        <div class="circle" id="black"></div>
+        <div class="circle" id="yellow"></div>
+    </div>
+
+</div>
+<div class="price">
+    <p>Price</p>
+    <p class="range">26,000rs</p>
+    <input type="range" name="" id="">
+</div>
+<div class="shipping">
+    <label class="ship">
+        Free Shipping
+        <input type="checkbox" name="shipping" id="shipping" value="shipping"><br>
+    </label>
+    <input type="button" id="clear" value="Clear Filters">
+</div>
+
+`
+templateDiv.append(burger_panel)
+burger_panel.style.width = '0'
+burger.addEventListener('click', () => {
+    burger_panel.style.transition = 'width 0.09s linear 0s '
+    let checking = burger_panel.classList.contains('checkClass')
+    console.log(checking)
+    if (checking) {
+
+        burger_panel.style.width = '0'
+        burger_panel.classList.remove('checkClass')
+    } else {
+        burger_panel.classList.add('checkClass')
+        burger_panel.style.width = '50vw'
+    }
+})
 
 //Color buttons
 allcolors.addEventListener('click', (e) => {

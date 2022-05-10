@@ -13,6 +13,74 @@
         height: 15vw;
     }
 
+    .category, .company, .colors, .price {
+        padding-left: 2vw;
+    }
+
+    .category p:first-child {
+        font-size: 2.5rem;
+    }
+
+    .burger_panel {
+        display: flex;
+    }
+
+    .categorybtn .categories {
+
+        margin: 10px 0 0 0;
+        color: rgb(104, 104, 104);
+        font-weight: 500;
+        border: none;
+        display: flex;
+        background-color: transparent;
+        font-size: 2.5rem;
+        border: none;
+    }
+
+    .company p {
+        font-size: 2.5rem;
+    }
+
+    .company select {
+        font-size: 2rem;
+    }
+
+    .colors p {
+        font-size: 2.5rem;
+    }
+
+    .colors p+div {
+        font-size: 2rem;
+    }
+
+    #allcolors {
+        width: 161px;
+        height: fit-content;
+        padding-right: 3vw;
+    }
+
+    #all~.circle {
+        min-height: 4vw;
+        min-width: 4vw;
+    }
+
+    .price :first-child {
+        font-size: 2.5rem;
+    }
+
+    .range {
+        font-size: 2rem;
+    }
+
+    input[type='range'] {
+        width: 45vw;
+    }
+
+    .shipping {
+        font-size: 2.5rem;
+        width: 165px;
+    }
+
     .container {
         margin: auto;
         width: fit-content;
@@ -125,5 +193,11 @@
 @media (max-width:400px) {
     html {
         font-size: 7px;
+    }
+}
+
+@media (max-width:350px) {
+    html {
+        font-size: 6px;
     }
 }
