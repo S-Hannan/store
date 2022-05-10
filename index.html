@@ -8,69 +8,76 @@
     <title>Document</title>
 
     <style>
-        .burger_panel {
-            display: none;
-            overflow: hidden;
-            background-color: rgb(225, 212, 212);
-            height: 81rem;
-            flex-direction: column;
-
-            border-top-right-radius: 2vw;
-            border-bottom-right-radius: 2vw;
-
+        .burger {
+            /* display: none; */
+            cursor: pointer;
+            height: 8vw;
+            width: 8.5vw;
+            /* position: absolute;
+            top: 0.5vw;
+            left: 2vw; */
             background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .line {
+            /* background-color: black; */
+            height: 1.2vw;
+            width: 8.5vw;
+            display: none;
+        }
+
+        .finalline {
+            background-color: yellow;
+            height: 1.2vw;
+            width: 8.5vw;
+            transform-origin: center;
+            transform: rotate(-45deg);
+        }
+
+        .finalchild {
+            background-color: yellow;
+            height: 1.2vw;
+            width: 8.5vw;
+            transform-origin: center;
+            transform: rotate(-90deg);
+        }
+
+        .crossline {
+            display: none;
+            background-color: blue;
+            height: 1.2vw;
+            width: 9.65vw;
+        }
+
+        .crossline:nth-child(2) {
+            transform-origin: 2.4vw;
+            transform: rotate(43deg);
+        }
+
+        .crossline:nth-child(4) {
+            transform-origin: 2.4vw;
+            transform: rotate(-43deg);
+
+
         }
     </style>
 </head>
 
 <body>
-    <div class="category">
-        <p>Category</p>
-        <div class="categorybtn">
-            <input type="button" value="All" class="categories" id="all">
-            <input type="button" value="Office" class="categories" id="office">
-            <input type="button" value="Living" class="categories" id="living">
-            <input type="button" value="Kitchen" class="categories" id="kitchen">
-            <input type="button" value="Bedroom" class="categories" id="bedroom">
-            <input type="button" value="Dining" class="categories" id="dining">
-            <input type="button" value="Kids" class="categories" id="kids">
+    <div class="burger">
+        <div class="line"></div>
+        <div class="crossline"></div>
+        <div class="finalline">
+            <div class="finalchild"></div>
         </div>
+        <div class="crossline"></div>
+        <div class="line"></div>
     </div>
 
-    <div class="company">
-        <p>Company</p>
-        <select name="Company" id="company">
-            <option value="all">All</option>
-            <option value="ikea">Ikea</option>
-            <option value="marcos">Marcos</option>
-            <option value="liddy">Liddy</option>
-            <option value="caressa">Caressa</option>
-        </select>
-    </div>
-    <div class="colors">
-        <p>Colors</p>
-        <div id="allcolors">
-            <div class="circle" id="all">All</div>
-            <div class="circle" id="red"></div>
-            <div class="circle" id="green"></div>
-            <div class="circle" id="blue"></div>
-            <div class="circle" id="black"></div>
-            <div class="circle" id="yellow"></div>
-        </div>
-
-    </div>
-    <div class="price">
-        <p>Price</p>
-        <p class="range">26,000rs</p>
-        <input type="range" name="" id="">
-    </div>
-    <div class="shipping">
-        <label class="ship">
-            Free Shipping
-            <input type="checkbox" name="shipping" id="shipping" value="shipping"><br>
-        </label>
-        <input type="button" id="clear" value="Clear Filters">
-    </div>
 </body>
 <script defer>
 

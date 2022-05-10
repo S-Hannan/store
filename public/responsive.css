@@ -64,6 +64,10 @@
         min-width: 4vw;
     }
 
+    #clear {
+        font-size: 1.8rem;
+    }
+
     .price :first-child {
         font-size: 2.5rem;
     }
@@ -201,3 +205,5 @@
         font-size: 6px;
     }
 }
+
+.burger .line {}

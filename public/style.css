@@ -35,18 +35,36 @@ html {
 .burger {
     display: none;
     cursor: pointer;
-    height: 8vw;
-    width: 8vw;
+    height: 7vw;
+    width: 8.5vw;
     position: absolute;
     top: 0.5vw;
     left: 2vw;
+    align-items: center;
 
 }
 
 .line {
     background-color: black;
     height: 1.2vw;
+    width: 7.5vw;
+}
+
+.cross_parent {
+    display: none;
+    background-color: black;
+    height: 1.2vw;
     width: 8.5vw;
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
+
+.cross_child {
+    background-color: black;
+    height: 1.2vw;
+    width: 8.5vw;
+    transform-origin: center;
+    transform: rotate(-90deg);
 }
 
 .container {
@@ -337,7 +355,8 @@ img {
     display: none;
     overflow: hidden;
     background-color: rgb(225, 212, 212);
-    height: 81rem;
+    /* height: 90rem; */
+    height: 100vh;
     flex-direction: column;
 
     border-top-right-radius: 2vw;
@@ -348,5 +367,5 @@ img {
 #template {
     position: absolute;
     left: 0;
-    top: 24vw;
+    top: 9vw;
 }
