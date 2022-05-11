@@ -10,7 +10,8 @@
 
     .stick {
         background-color: white;
-        height: 15vw;
+        height: 12.5vw;
+        /* z-index: -2; */
     }
 
     .category, .company, .colors, .price {
@@ -88,17 +89,21 @@
     .container {
         margin: auto;
         width: fit-content;
+
     }
 
     .allcontent {
         width: 94vw;
+        z-index: -2;
     }
 
 
     .sort {
         width: 100vw;
         margin: auto;
-        display: none;
+        height: 5vw;
+        top: 12.5vw;
+        /* z-index: -1; */
     }
 
     .sorting {
@@ -118,7 +123,8 @@
 
     .panel {
         width: 0;
-        top: 15vw;
+        top: 13vw;
+        /* z-index: -1; */
     }
 
     input[type='search']~div {
@@ -135,10 +141,12 @@
 
     hr {
         width: 8rem;
+        display: none;
     }
 
     .select {
         margin-left: 1rem;
+        display: none;
     }
 
     .select p {
@@ -169,7 +177,7 @@
     #search {
         position: absolute;
         left: 9vw;
-        top: -15vw;
+        top: -10vw;
         width: 73vw;
         height: 9vw;
 
