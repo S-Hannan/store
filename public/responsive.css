@@ -98,10 +98,10 @@
 
 
     .sort {
-        width: 100vw;
+        width: inherit;
         margin: auto;
         height: 5vw;
-        top: 15.1vw;
+        top: 12.5vw;
     }
 
     .sorting {
@@ -121,7 +121,7 @@
 
     .panel {
         width: 0;
-        top: 15vw;
+        top: 12.5vw;
     }
 
     input[type='search']~div {
