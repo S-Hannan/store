@@ -92,7 +92,7 @@ burger.addEventListener('click', () => {
         })
         crossParent.style.display = 'block'
         burger_panel.classList.add('checkClass')
-        burger_panel.style.width = '43vw'
+        burger_panel.style.width = '50vw'
         html.style.overflowY = 'hidden'
 
     }
@@ -119,7 +119,6 @@ allcolors.addEventListener('click', (e) => {
         for (let i = 1; i < 6; i++) {
             allcolors.children[i].style.height = '18px'
             allcolors.children[i].style.width = '18px'
-            console.log('done')
             allcolors.children[i].style.border = 'none'
         }
         allcolors.children[0].style.border = 'none'
