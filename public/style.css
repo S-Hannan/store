@@ -85,7 +85,8 @@ html {
 }
 
 .allcontent {
-    width: inherit;
+    /* width: inherit; */
+    width: auto;
 }
 
 .sort {
@@ -105,7 +106,6 @@ html {
 
 .info {
     margin-right: 1.5vw;
-
 }
 
 .info p {
@@ -224,7 +224,7 @@ p~.categories input[type="submit"]:focus {
     font-weight: 500;
 }
 
-#allcolors {
+#allcolors, #allcolorsTwo {
     display: flex;
     height: 1.5vw;
     width: 11vw;
@@ -245,34 +245,34 @@ p~.categories input[type="submit"]:focus {
     font-weight: 500;
 }
 
-#all {
+#all, #allTwo {
     border-bottom: 2px solid black;
 }
 
-#all~.circle {
+#all~.circle, #allTwo~.circle {
     height: 18px;
     width: 18px;
     border-radius: 20px;
 }
 
-#red {
+#red, #redTwo {
     background-color: rgba(255, 0, 0, 0.6);
 }
 
-#green {
+#green, #greenTwo {
     background-color: rgba(173, 255, 47, 0.6);
 
 }
 
-#blue {
+#blue, #blueTwo {
     background-color: rgba(0, 0, 255, 0.6);
 }
 
-#black {
+#black, #blackTwo {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#yellow {
+#yellow, #yellowTwo {
     background-color: rgba(255, 255, 0, 0.6);
 }
 
@@ -355,8 +355,8 @@ img {
     display: none;
     overflow: hidden;
     background-color: rgb(225, 212, 212);
-    /* height: 90rem; */
-    height: 100vh;
+    height: 90rem;
+    /* height: 100vh; */
     flex-direction: column;
     border-top-right-radius: 2vw;
     border-bottom-right-radius: 2vw;

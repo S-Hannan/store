@@ -47,13 +47,13 @@ burger_panel.innerHTML = `
 </div>
 <div class="colors">
     <p>Colors</p>
-    <div id="allcolors">
-        <div class="circle" id="all">All</div>
-        <div class="circle" id="red"></div>
-        <div class="circle" id="green"></div>
-        <div class="circle" id="blue"></div>
-        <div class="circle" id="black"></div>
-        <div class="circle" id="yellow"></div>
+    <div id="allcolorsTwo">
+        <div class="circle" id="allTwo">All</div>
+        <div class="circle" id="redTwo"></div>
+        <div class="circle" id="greenTwo"></div>
+        <div class="circle" id="blueTwo"></div>
+        <div class="circle" id="blackTwo"></div>
+        <div class="circle" id="yellowTwo"></div>
     </div>
 
 </div>
@@ -65,9 +65,9 @@ burger_panel.innerHTML = `
 <div class="shipping">
     <label class="ship">
         Free Shipping
-        <input type="checkbox" name="shipping" id="shipping" value="shipping"><br>
+        <input type="checkbox" name="shipping" id="shippingTwo" value="shipping"><br>
     </label>
-    <input type="button" id="clear" value="Clear Filters">
+    <input type="button" id="clearTwo" value="Clear Filters">
 </div>
 
 `
@@ -84,7 +84,7 @@ burger.addEventListener('click', () => {
         crossParent.style.display = 'none'
         burger_panel.style.width = '0'
         burger_panel.classList.remove('checkClass')
-        html.style.overflowY = 'visible'
+        // html.style.overflowY = 'visible'
     } else {
         burger.style.justifyContent = 'center'
         line.forEach((line) => {
@@ -93,7 +93,7 @@ burger.addEventListener('click', () => {
         crossParent.style.display = 'block'
         burger_panel.classList.add('checkClass')
         burger_panel.style.width = '50vw'
-        html.style.overflowY = 'hidden'
+        // html.style.overflowY = 'hidden'
 
     }
 })
@@ -101,10 +101,38 @@ burger.addEventListener('click', () => {
 let categoryTwo = document.querySelector('.burger_panel .category .categorybtn')
 let categoriesTwo = document.querySelectorAll('.burger_panel .category .categorybtn .categories')
 let companyTwo = document.getElementById('companyTwo')
-
+let clearbtnTwo = document.getElementById('clearTwo')
+let shippingTwo = document.getElementById('shippingTwo')
+let allcolorsTwo = document.getElementById('allcolorsTwo')
+let element;
 //Color buttons
+allcolorsTwo.addEventListener('click', (e) => {
+    element = e.target.id
+    if (element == 'allcolorsTwo') {
+        return
+    }
+    else if (element == 'allTwo') {
+        for (let i = 1; i < 6; i++) {
+            allcolorsTwo.children[i].style.height = '18px'
+            allcolorsTwo.children[i].style.width = '18px'
+            allcolorsTwo.children[i].style.border = 'none'
+        }
+        return e.target.style.borderBottom = '2px solid black'
+    } else {
+        for (let i = 1; i < 6; i++) {
+            allcolorsTwo.children[i].style.height = '18px'
+            allcolorsTwo.children[i].style.width = '18px'
+            allcolorsTwo.children[i].style.border = 'none'
+        }
+        allcolorsTwo.children[0].style.border = 'none'
+        e.target.style.height = '15px'
+        e.target.style.width = '15px'
+        return e.target.style.border = '2px solid black'
+    }
+})
+////////////////////////////////////////
 allcolors.addEventListener('click', (e) => {
-    let element = e.target.id
+    element = e.target.id
     if (element == 'allcolors') {
         return
     }
@@ -2784,8 +2812,54 @@ fetch(url)
                 total.innerHTML = `${i + 1} Products`
                 return products.append(fill(item.name, item.price, item.img))
             })
+            for (let i = 1; i < 6; i++) {
+                allcolors.children[i].style.height = '18px'
+                allcolors.children[i].style.width = '18px'
+                allcolors.children[i].style.border = 'none'
+            }
+            allcolors.children[0].style.borderBottom = '2px solid black'
+
             if (shipping.checked) {
                 shipping.checked = false
+            }
+            query = ''
+            value = 'all'
+            name = 'all'
+            option = 'notsorted'
+        })
+        ////////////////////////////////////////////////
+        clearbtnTwo.addEventListener('click', () => {
+            searchBar.value = ''
+            sortPrice.innerHTML = `
+            <option value="notsorted">Price(Not Sorted)</option>
+            <option value="lowest">Price(Lowest)</option>
+            <option value="highest">Price(Highest)</option>`
+            categoriesTwo.forEach((btn) => {
+                return btn.style.borderBottom = 'none'
+            })
+            categoriesTwo[0].style.borderBottom = '2px solid'
+            companyTwo.innerHTML = `
+            <option value="all">All</option>
+            <option value="ikea">Ikea</option>
+            <option value="marcos">Marcos</option>
+            <option value="liddy">Liddy</option>
+            <option value="caressa">Caressa</option>`
+            let endResult = json.allProduct.sort((a, b) => {
+                return a.img.substring(5, 7) - b.img.substring(5, 7)
+            })
+            products.innerHTML = ''
+            endResult.map((item, i) => {
+                total.innerHTML = `${i + 1} Products`
+                return products.append(fill(item.name, item.price, item.img))
+            })
+            for (let i = 1; i < 6; i++) {
+                allcolorsTwo.children[i].style.height = '18px'
+                allcolorsTwo.children[i].style.width = '18px'
+                allcolorsTwo.children[i].style.border = 'none'
+            }
+            allcolorsTwo.children[0].style.borderBottom = '2px solid black'
+            if (shippingTwo.checked) {
+                shippingTwo.checked = false
             }
             query = ''
             value = 'all'
