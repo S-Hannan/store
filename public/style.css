@@ -126,6 +126,11 @@ hr {
     margin-left: 2.5vw;
 }
 
+.selectTwo {
+    margin: 0;
+    display: none;
+}
+
 .select p {
     font-size: 1.4rem;
     width: 5vw;
@@ -138,6 +143,18 @@ hr {
     border: none;
     background-color: transparent;
     font-weight: bold;
+
+}
+
+#sortTwo {
+    font-size: 1.4rem;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    width: fit-content;
+    height: inherit;
+    font-size: 1.5rem;
+    color: rgb(122, 78, 78);
 
 }
 
@@ -338,7 +355,7 @@ img {
 .filter {
     display: none;
     height: 5.5vw;
-    width: 13vw;
+    width: 15vw;
     text-align: center;
     padding-top: 2.3vw;
     font-size: 1.5rem;
@@ -355,8 +372,8 @@ img {
     display: none;
     overflow: hidden;
     background-color: rgb(225, 212, 212);
-    height: 90rem;
-    /* height: 100vh; */
+    /* height: 90rem; */
+    height: 100vh;
     flex-direction: column;
     border-top-right-radius: 2vw;
     border-bottom-right-radius: 2vw;
@@ -366,4 +383,15 @@ img {
     position: absolute;
     left: 0;
     top: 17vw;
+}
+
+#clearTwo {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    background-color: brown;
+    color: white;
+    border-radius: 6px;
+    padding: 6px;
+    font-weight: bold;
+    border: none;
 }

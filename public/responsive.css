@@ -1,6 +1,6 @@
 @media (max-width:750px) {
     html {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .heading {
@@ -18,7 +18,7 @@
     }
 
     .category p:first-child {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .burger_panel {
@@ -33,12 +33,12 @@
         border: none;
         display: flex;
         background-color: transparent;
-        font-size: 2.5rem;
+        font-size: 2rem;
         border: none;
     }
 
     .company p {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .company select {
@@ -46,7 +46,7 @@
     }
 
     .colors p {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .colors p+div {
@@ -69,7 +69,7 @@
     }
 
     .price :first-child {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .range {
@@ -81,7 +81,7 @@
     }
 
     .shipping {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         width: 165px;
     }
 
@@ -98,11 +98,13 @@
 
 
     .sort {
-        width: inherit;
+        width: 100vw;
         margin: auto;
         height: 5vw;
         top: 12.5vw;
     }
+
+
 
     .sorting {
         width: 100vw;
@@ -146,8 +148,22 @@
         display: none;
     }
 
+    .selectTwo {
+        display: flex;
+        position: absolute;
+        top: 2.5vw;
+        right: 0;
+        height: 8vw;
+        width: 17vw;
+        align-items: center;
+        justify-content: center;
+        border: 0.5vw solid black;
+        border-radius: 1vw;
+    }
+
     .select p {
         width: 6rem;
+        display: none;
     }
 
     .products {
@@ -175,7 +191,7 @@
         position: absolute;
         left: 9vw;
         top: -10vw;
-        width: 73vw;
+        width: 69vw;
         height: 9vw;
 
     }
@@ -183,30 +199,58 @@
 
 @media (max-width:550px) {
     html {
-        font-size: 10px;
+        font-size: 11px;
     }
 }
 
 @media (max-width:494px) {
     html {
-        font-size: 9px;
+        font-size: 10px;
     }
 }
 
 @media (max-width:450px) {
     html {
-        font-size: 8px;
+        font-size: 9px;
     }
 }
 
 @media (max-width:400px) {
     html {
-        font-size: 7px;
+        font-size: 8px;
+    }
+
+    #sortTwo {
+        width: inherit;
     }
 }
 
 @media (max-width:350px) {
     html {
+        font-size: 7px;
+    }
+}
+
+@media (max-width:300px) {
+    html {
         font-size: 6px;
+    }
+}
+
+@media (max-width:250px) {
+    html {
+        font-size: 5px;
+    }
+}
+
+@media (max-width:200px) {
+    html {
+        font-size: 4px;
+    }
+}
+
+@media (max-width:150px) {
+    html {
+        font-size: 3px;
     }
 }

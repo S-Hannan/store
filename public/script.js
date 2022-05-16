@@ -5,6 +5,7 @@ let searchBar = document.getElementById('search')
 let company = document.getElementById('company')
 let clearbtn = document.getElementById('clear')
 let sortPrice = document.querySelector('#sort')
+let sortPriceTwo = document.querySelector('#sortTwo')
 let total = document.querySelector('.info p')
 let category = document.querySelector('.categorybtn')
 let categories = document.querySelectorAll('.categories')
@@ -84,7 +85,7 @@ burger.addEventListener('click', () => {
         crossParent.style.display = 'none'
         burger_panel.style.width = '0'
         burger_panel.classList.remove('checkClass')
-        // html.style.overflowY = 'visible'
+        html.style.overflowY = 'visible'
     } else {
         burger.style.justifyContent = 'center'
         line.forEach((line) => {
@@ -93,7 +94,7 @@ burger.addEventListener('click', () => {
         crossParent.style.display = 'block'
         burger_panel.classList.add('checkClass')
         burger_panel.style.width = '50vw'
-        // html.style.overflowY = 'hidden'
+        html.style.overflowY = 'hidden'
 
     }
 })
@@ -1218,6 +1219,728 @@ fetch(url)
             }
         })
         //sorting logic
+        sortPriceTwo.addEventListener('input', (e) => {
+            option = e.target.value
+            let sortedItems;
+            if (name) {
+                if (name == 'all') {
+                    if (option == 'lowest') {
+                        if (value) {
+                            if (value == 'all') {
+                                if (query) {
+                                    sortedItems = filteredItems.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            } else {
+                                if (query) {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.category == value
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            }
+
+                        } else {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+
+                        }
+                    } else if (option == 'highest') {
+
+                        if (value) {
+                            if (value == 'all') {
+                                if (query) {
+                                    sortedItems = filteredItems.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+
+                                    })
+                                }
+                            } else {
+                                if (query) {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.category == value
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+
+                                })
+                            }
+
+
+                        }
+                    } else if (option == 'notsorted') {
+                        if (value) {
+                            if (value == 'all') {
+                                if (query) {
+                                    console.log(query)
+                                    sortedItems = filteredItems.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    products.innerHTML = ''
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            } else {
+                                if (query) {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.category == value
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                products.innerHTML = ''
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        }
+                    } else {
+                        console.log('Error')
+                    }
+                } else {
+                    console.log(name)
+                    if (option == 'lowest') {
+                        if (value) {
+                            if (value == 'all') {
+                                if (query) {
+                                    sortedItems = filteredItems.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    sortedItems = filteredItems.filter((item) => {
+                                        return item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            } else {
+                                if (query) {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value && item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.price - b.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.category == value && item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            }
+
+                        } else {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                sortedItems = filteredItems.filter((item) => {
+                                    return item.company == name
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.company == name
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+
+                        }
+                    } else if (option == 'highest') {
+
+                        if (value) {
+                            if (value == 'all') {
+                                if (query) {
+                                    sortedItems = filteredItems.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    sortedItems = filteredItems.filter((item) => {
+                                        return item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+
+                                    })
+                                }
+                            } else {
+                                if (query) {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value && item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return b.price - a.price
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.category == value && item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                sortedItems = filteredItems.filter((item) => {
+                                    return item.company == name
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.company == name
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+
+                                })
+                            }
+
+
+                        }
+                    } else if (option == 'notsorted') {
+                        if (value) {
+                            if (value == 'all') {
+                                if (query) {
+                                    sortedItems = filteredItems.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    sortedItems = filteredItems.filter((item) => {
+                                        return item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            } else {
+                                if (query) {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value && item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                } else {
+                                    sortedItems = json.allProduct.sort((a, b) => {
+                                        return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                    })
+                                    sortedItems = json.allProduct.filter((item) => {
+                                        return item.category == value && item.company == name
+                                    })
+                                    products.innerHTML = ''
+                                    sortedItems.map((item, i) => {
+                                        total.innerHTML = `${i + 1} Products`
+                                        return products.append(fill(item.name, item.price, item.img))
+                                    })
+                                }
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                sortedItems = filteredItems.filter((item) => {
+                                    return item.company == name
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.company == name
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        }
+                    } else {
+                        console.log('Error')
+                    }
+
+                }
+            } else {
+                if (option == 'lowest') {
+                    if (value) {
+                        if (value == 'all') {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.price - b.price
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.category == value
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        }
+
+                    } else {
+                        if (query) {
+                            sortedItems = filteredItems.sort((a, b) => {
+                                return a.price - b.price
+                            })
+                            products.innerHTML = ''
+                            sortedItems.map((item, i) => {
+                                total.innerHTML = `${i + 1} Products`
+                                return products.append(fill(item.name, item.price, item.img))
+                            })
+                        } else {
+
+                            sortedItems = json.allProduct.sort((a, b) => {
+                                return a.price - b.price
+                            })
+                            products.innerHTML = ''
+                            sortedItems.map((item, i) => {
+                                total.innerHTML = `${i + 1} Products`
+                                return products.append(fill(item.name, item.price, item.img))
+                            })
+                        }
+
+                    }
+                } else if (option == 'highest') {
+
+                    if (value) {
+                        if (value == 'all') {
+                            if (query) {
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+
+                                })
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return b.price - a.price
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.category == value
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        }
+                    } else {
+                        if (query) {
+                            sortedItems = filteredItems.sort((a, b) => {
+                                return b.price - a.price
+                            })
+                            products.innerHTML = ''
+                            sortedItems.map((item, i) => {
+                                total.innerHTML = `${i + 1} Products`
+                                return products.append(fill(item.name, item.price, item.img))
+                            })
+                        } else {
+                            sortedItems = json.allProduct.sort((a, b) => {
+                                return b.price - a.price
+                            })
+                            products.innerHTML = ''
+                            sortedItems.map((item, i) => {
+                                total.innerHTML = `${i + 1} Products`
+                                return products.append(fill(item.name, item.price, item.img))
+
+                            })
+                        }
+
+
+                    }
+                } else if (option == 'notsorted') {
+                    if (value) {
+                        if (value == 'all') {
+                            if (query) {
+                                console.log(query)
+                                sortedItems = filteredItems.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                products.innerHTML = ''
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        } else {
+                            if (query) {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.name.replace(/\s+/g, '').toLowerCase().includes(query) && item.category == value
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            } else {
+                                sortedItems = json.allProduct.sort((a, b) => {
+                                    return a.img.substring(5, 7) - b.img.substring(5, 7)
+                                })
+                                sortedItems = json.allProduct.filter((item) => {
+                                    return item.category == value
+                                })
+                                products.innerHTML = ''
+                                sortedItems.map((item, i) => {
+                                    total.innerHTML = `${i + 1} Products`
+                                    return products.append(fill(item.name, item.price, item.img))
+                                })
+                            }
+                        }
+                    } else {
+                        if (query) {
+                            sortedItems = filteredItems.sort((a, b) => {
+                                return a.img.substring(5, 7) - b.img.substring(5, 7)
+                            })
+                            products.innerHTML = ''
+                            sortedItems.map((item, i) => {
+                                total.innerHTML = `${i + 1} Products`
+                                return products.append(fill(item.name, item.price, item.img))
+                            })
+                        } else {
+                            products.innerHTML = ''
+                            sortedItems = json.allProduct.sort((a, b) => {
+                                return a.img.substring(5, 7) - b.img.substring(5, 7)
+                            })
+                            products.innerHTML = ''
+                            sortedItems.map((item, i) => {
+                                total.innerHTML = `${i + 1} Products`
+                                return products.append(fill(item.name, item.price, item.img))
+                            })
+                        }
+                    }
+                } else {
+                    console.log('Error')
+                }
+
+            }
+        })
+        /////////////////////////////////////////////////
         sortPrice.addEventListener('input', (e) => {
             option = e.target.value
             let sortedItems;
@@ -2834,6 +3557,10 @@ fetch(url)
             <option value="notsorted">Price(Not Sorted)</option>
             <option value="lowest">Price(Lowest)</option>
             <option value="highest">Price(Highest)</option>`
+            sortPriceTwo.innerHTML = `
+            <option value="notsorted">Sort by</option>
+                <option value="lowest">Lowest</option>
+                <option value="highest">Highest</option>`
             categoriesTwo.forEach((btn) => {
                 return btn.style.borderBottom = 'none'
             })
