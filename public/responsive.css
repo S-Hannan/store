@@ -219,10 +219,6 @@
     html {
         font-size: 8px;
     }
-
-    #sortTwo {
-        width: inherit;
-    }
 }
 
 @media (max-width:350px) {
