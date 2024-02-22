@@ -1,6 +1,7 @@
-@media (max-width:750px) {
+@media (max-width:900px) {
     html {
         font-size: 12px;
+
     }
 
     .heading {
@@ -197,15 +198,84 @@
     }
 }
 
+@media(max-width:6150px) {
+    html {
+        font-size: 53px;
+    }
+}
+
+@media(max-width:4610px) {
+    html {
+        font-size: 40px;
+    }
+}
+
+@media (max-width:3090px) {
+    html {
+        font-size: 27px;
+    }
+}
+
+@media (max-width:2400px) {
+    html {
+        font-size: 20px;
+
+    }
+}
+
+@media (max-width:2300px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:2100px) {
+    html {
+        font-size: 17px;
+
+    }
+}
+
+@media (max-width:1950px) {
+    html {
+        font-size: 16px;
+
+    }
+
+}
+
+@media (max-width:1650px) {
+    html {
+        font-size: 14px;
+
+    }
+}
+
+@media (max-width:1200px) {
+    html {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width:1000px) {
+    html {
+        font-size: 12px;
+        /* background-color: red; */
+    }
+}
+
 @media (max-width:550px) {
     html {
         font-size: 11px;
+
     }
 }
 
 @media (max-width:494px) {
     html {
         font-size: 10px;
+
     }
 }
 
@@ -224,6 +294,7 @@
 @media (max-width:350px) {
     html {
         font-size: 7px;
+
     }
 }
 
@@ -236,6 +307,7 @@
 @media (max-width:250px) {
     html {
         font-size: 5px;
+
     }
 }
 
@@ -248,5 +320,6 @@
 @media (max-width:150px) {
     html {
         font-size: 3px;
+
     }
 }

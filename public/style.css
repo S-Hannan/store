@@ -133,7 +133,9 @@ hr {
 
 .select p {
     font-size: 1.4rem;
-    width: 5vw;
+    width: 7.5vw;
+    text-align: center;
+    max-height: 1.5vw;
     font-weight: bold;
 
 }
@@ -172,7 +174,7 @@ option {
 
 #search {
     background-color: rgb(237, 248, 255);
-    height: 40px;
+    height: 2.5vw;
     width: 65%;
     border: none;
     font-size: 1.6rem;
@@ -264,12 +266,15 @@ p~.categories input[type="submit"]:focus {
 
 #all, #allTwo {
     border-bottom: 2px solid black;
+    cursor: pointer;
+
 }
 
 #all~.circle, #allTwo~.circle {
-    height: 18px;
-    width: 18px;
-    border-radius: 20px;
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
 #red, #redTwo {
@@ -394,4 +399,9 @@ img {
     padding: 6px;
     font-weight: bold;
     border: none;
+}
+
+input[type=range] {
+    width: 10vw;
+
 }
